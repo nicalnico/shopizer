@@ -8,7 +8,8 @@
 	<!-- required common scripts -->
 	<script src="<c:url value="/resources/js/shop-functions.js" />"></script>
     <jsp:include page="/resources/js/functions.jsp" />
-    <script src="<c:url value="/resources/js/jquery-1.10.2.min.js" />"></script>
+<%--     <script src="<c:url value="/resources/js/jquery-1.10.2.min.js" />"></script> --%>
+	<script src="<c:url value="/resources/templates/bootstrap/js/vendor/jquery-1.12.0.min.js" />"></script>
     <script src="<c:url value="/resources/js/json2.js" />"></script>
     <script src="<c:url value="/resources/js/jquery-cookie.js" />"></script>
     <script src="<c:url value="/resources/js/shopping-cart.js" />"></script>
@@ -30,6 +31,19 @@
     <script src="<c:url value="/resources/templates/bootstrap/js/bootstrap-popover.js" />"></script>
     
     <link rel="icon" href="<c:url value="/resources/templates/bootstrap/img/favicon.ico"/> ">
+
+   	<script type="text/javascript">
+    	//show overlay wait
+    	function showTemplateLoading(element) {
+    		$.LoadingOverlay("show");
+    	}
+    	
+    	function hideTemplateLoading(element) {
+    		$.LoadingOverlay("hide", true);
+    	}
+   
+     </script>
+    
 
     
     <!-- mini shopping cart template -->
