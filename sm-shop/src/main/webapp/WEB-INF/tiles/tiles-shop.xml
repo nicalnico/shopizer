@@ -12,6 +12,13 @@
   		<put-attribute name="footer" value="/pages/shop/templates/{1}/sections/footer.jsp" />
   	</definition>
   	
+  	<definition name="landing.bastille" template="/pages/shop/templates/bastille/catalogLayout.jsp">
+ 		<put-attribute name="header" value="/pages/shop/templates/bastille/sections/header.jsp" />
+  		<put-attribute name="navbar" value="/pages/shop/templates/bastille/sections/navbar.jsp" /> 
+  		<put-attribute name="body" value="/pages/shop/templates/bastille/pages/landing.jsp" />
+  		<put-attribute name="footer" value="/pages/shop/templates/bastille/sections/footer.jsp" />
+  	</definition>
+  	
   	<definition name="category.*" template="/pages/shop/templates/{1}/catalogLayout.jsp">
   		 <put-attribute name="header" value="/pages/shop/templates/{1}/sections/header.jsp" />
   		<put-attribute name="navbar" value="/pages/shop/templates/{1}/sections/navbar.jsp" /> 
@@ -79,6 +86,13 @@
   		<put-attribute name="footer" value="/pages/shop/templates/generic/sections/footer.jsp" />
   	</definition>
   	
+  	<definition name="maincart.bastille" template="/pages/shop/templates/bastille/catalogLayout.jsp">
+  	  	<put-attribute name="header" value="/pages/shop/templates/bastille/sections/header.jsp" />
+  	  	<put-attribute name="navbar" value="/pages/shop/templates/bastille/sections/navbar.jsp" />
+  		<put-attribute name="body" value="/pages/shop/templates/bastille/pages/cart.jsp" />
+  		<put-attribute name="footer" value="/pages/shop/templates/bastille/sections/footer.jsp" />
+  	</definition>
+  	
   	<!-- Contact us -->
   	<definition name="contactus.*" template="/pages/shop/templates/{1}/catalogLayout.jsp">
   	  	<put-attribute name="header" value="/pages/shop/templates/{1}/sections/header.jsp" />
@@ -109,6 +123,14 @@
   		<put-attribute name="body" value="/pages/shop/templates/generic/pages/register.jsp" />
   		<put-attribute name="footer" value="/pages/shop/templates/generic/sections/footer.jsp" />
   	</definition>
+  	
+  	<definition name="register.bastille" template="/pages/shop/templates/bastille/catalogLayout.jsp">
+  	  	<put-attribute name="header" value="/pages/shop/templates/bastille/sections/header.jsp" />
+  		<put-attribute name="navbar" value="/pages/shop/templates/bastille/sections/navbar.jsp" />
+  		<put-attribute name="body" value="/pages/shop/templates/bastille/pages/register.jsp" />
+  		<put-attribute name="footer" value="/pages/shop/templates/bastille/sections/footer.jsp" />
+  	</definition>
+  	
   	  	
   	<definition name="customerAccount.*" template="/pages/shop/templates/{1}/catalogLayout.jsp">
   	  	<put-attribute name="header" value="/pages/shop/templates/{1}/sections/header.jsp" />
@@ -168,6 +190,13 @@
   		<put-attribute name="footer" value="/pages/shop/templates/generic/sections/footer.jsp" />
   	</definition>
   	
+  	<definition name="customerLogon.bastille" template="/pages/shop/templates/bastille/catalogLayout.jsp">
+  	  	<put-attribute name="header" value="/pages/shop/templates/bastille/sections/header.jsp" />
+  		<put-attribute name="navbar" value="/pages/shop/templates/bastille/sections/navbar.jsp" />
+  		<put-attribute name="body" value="/pages/shop/templates/bastille/pages/logon.jsp" />
+  		<put-attribute name="footer" value="/pages/shop/templates/bastille/sections/footer.jsp" />
+  	</definition>
+  	
   	<!-- One page checkout -->
   	<definition name="checkout.*" template="/pages/shop/templates/{1}/catalogLayout.jsp">
   	  	<put-attribute name="header" value="/pages/shop/templates/{1}/sections/header.jsp" />
@@ -182,6 +211,13 @@
   		<put-attribute name="navbar" value="/pages/shop/templates/generic/sections/navbar.jsp" />
   		<put-attribute name="body" value="/pages/shop/templates/generic/pages/checkout.jsp" />
   		<put-attribute name="footer" value="/pages/shop/templates/generic/sections/footer.jsp" />
+  	</definition>
+  	
+  	<definition name="checkout.bastille" template="/pages/shop/templates/bastille/catalogLayout.jsp">
+  	  	<put-attribute name="header" value="/pages/shop/templates/bastille/sections/header.jsp" />
+  		<put-attribute name="navbar" value="/pages/shop/templates/bastille/sections/navbar.jsp" />
+  		<put-attribute name="body" value="/pages/shop/templates/bastille/pages/checkout.jsp" />
+  		<put-attribute name="footer" value="/pages/shop/templates/bastille/sections/footer.jsp" />
   	</definition>
   	
   	<definition name="confirmation.*" template="/pages/shop/templates/{1}/catalogLayout.jsp">

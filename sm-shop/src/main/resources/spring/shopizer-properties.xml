@@ -65,6 +65,7 @@
 	<!-- templates -->
 	<!-- Add new templates in the list, should point to pages/shop/templates and resources/templates -->
 	<util:list id="templates" value-type="java.lang.String">
+		<value>bastille</value>
 		<value>bootstrap</value>
 		<value>generic</value>
 		<value>exoticamobilia</value>
