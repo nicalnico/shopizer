@@ -5,7 +5,7 @@ import java.util.Locale;
 
 public class SchemaConstant {
 
-	public final static String SALESMANAGER_SCHEMA = "AMBROSELLI";
+	public final static String SALESMANAGER_SCHEMA = "BASTILLE";
 
 	/**
 	 * Languages iso codes

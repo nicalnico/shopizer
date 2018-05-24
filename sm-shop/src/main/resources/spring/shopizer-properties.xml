@@ -42,8 +42,8 @@
 				<prop key="shopizer.googlemaps_key">AIzaSyB9NBFBiHKJ00SpVlRB495bTktcJE3iwNA</prop>
 				<!-- #https://www.google.com/recaptcha/admin/create -->
 				<!-- to be used with localhost -->
-				<prop key="shopizer.recapatcha_public_key">6Ldf31UUAAAAANpJNAMcMuVfILl80QmB-q6bQvM4</prop>
-				<prop key="shopizer.recapatcha_private_key">6Ldf31UUAAAAAJNu-KRdireGYY8hSB_Tn65Fv55X</prop>
+				<prop key="shopizer.recapatcha_public_key">6LdN2loUAAAAAA4vkV8F_-9TiX6ENDLrkG8qskpI</prop>
+				<prop key="shopizer.recapatcha_private_key">6LdN2loUAAAAAFKrCqefaqdyeYIjW0s7lEDefVvR</prop>
 				<prop key="shopizer.recapatcha_url"><![CDATA[https://www.google.com/recaptcha/api/siteverify]]></prop>
 				
 				<!-- express checkout url -->
@@ -69,6 +69,7 @@
 		<value>generic</value>
 		<value>exoticamobilia</value>
 		<value>ambroselar</value>
+		<value>bastille</value>
     </util:list>
     
     <bean id="initData" class="com.salesmanager.shop.init.data.InitStoreData"/>
