@@ -70,7 +70,9 @@ $(document).ready(function() {
     					
     							<div class="sm-ui-component">
     							<a href="<c:url value="/admin/shipping/weightBased.html"/>"><s:message code="label.generic.back" text="Back" /></a><br/><br/>
-								<h3><s:message code="module.shipping.weightBased" text="module.shipping.weightBased" /> - <c:out value="${customRegion.customRegionName}" /></h3>	
+								<h3>
+<%-- 									<s:message code="module.shipping.weightBased" text="module.shipping.weightBased" /> -  --%>
+									<c:out value="${customRegion.customRegionName}" /></h3>	
 								<br/>
 
 								<c:url var="addPrice" value="/admin/shipping/weightBased/addPrice.html"/>
