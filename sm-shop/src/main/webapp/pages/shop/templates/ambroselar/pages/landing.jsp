@@ -19,6 +19,12 @@ response.setDateHeader ("Expires", -1);
 	 
 	       <div style="margin-top: 5px;" class="banner center-block">
 			    
+     	      	<style>
+			    	.banner img {
+			    		max-width:100% !important; 
+		    		}
+	    		</style
+			    
 			    <script src="<c:url value="/resources/js/jquery-1.11.3.min.js" />"></script>
 			    <script	src="<c:url value="/resources/js/jssor.slider-27.1.0.min.js" />"></script>
 			    
