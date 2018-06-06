@@ -14,14 +14,11 @@ response.setDateHeader ("Expires", -1);
 <%@page contentType="text/html"%>
 <%@page pageEncoding="UTF-8"%>
 
-	
-	<!-- include all header js and css -->
-	<jsp:include page="/pages/shop/templates/ambroselar/sections/jsLinks.jsp" />
-    <jsp:include page="/pages/shop/templates/ambroselar/sections/shopLinks.jsp" />
                 
 <div id="productsContainer" class="list-unstyled"> 
 										<c:forEach items="${requestScope.ITEMS}" var="product">
-											<div class="col-sm-4 col-sm-6 col-xs-12 product" data-id="${product.id}" item-price="${product.price}" item-name="${product.description.name}" item-order="${product.sortOrder}">												
+											<div class="col-sm-4 col-sm-6 col-xs-12 product" data-id="${product.id}" item-price="${product.price}" item-name="${product.description.name}" item-order="${product.sortOrder}">
+<!-- 											<div class="box-style-1 white-bg object-non-visible animated object-visible"> -->												
 												<div class="box-style-4 white-bg object-non-visible animated object-visible">											
 												
 												    <c:if test="${product.description.highlights!=null && product.description.highlights!=''}">
@@ -76,3 +73,27 @@ response.setDateHeader ("Expires", -1);
 											</div>
 										</c:forEach>
 </div>
+
+<%-- 										<c:forEach items="${requestScope.ITEMS}" var="product"> --%>
+<!-- 										<div class="single-new-product single-new-product-override"> -->
+<!-- 												<div class="product-img"> -->
+<%-- 													<c:if test="${product.image!=null}"><a href="<c:url value="/shop/product/" /><c:out value="${product.description.friendlyUrl}"/>.html"><img src="<sm:shopProductImage imageName="${product.image.imageName}" sku="${product.sku}"/>" class="first_img"/></a></c:if> --%>
+<!-- 												</div> -->
+<!-- 												<div class="product-content text-center"> -->
+<%-- 													<h3>${product.description.name}</h3> --%>
+<%-- 													<h4><c:choose> --%>
+<%-- 															<c:when test="${product.discounted}"> --%>
+<%-- 																<del><c:out value="${product.originalPrice}" /></del>&nbsp;<span class="specialPrice"><c:out value="${product.finalPrice}" /></span> --%>
+<%-- 															</c:when> --%>
+<%-- 															<c:otherwise> --%>
+<%-- 																<c:out value="${product.finalPrice}" /> --%>
+<%-- 															</c:otherwise> --%>
+<%-- 														</c:choose> --%>
+<!-- 													</h4> -->
+<!-- 													<br> -->
+<!-- 													<h5> -->
+<%-- 														<a href="<c:url value="/shop/product/" /><c:out value="${product.description.friendlyUrl}"/>.html<sm:breadcrumbParam productId="${product.id}"/>"><s:message code="button.label.view" text="Details" /></a> <c:choose><c:when test="${requestScope.FEATURED==true}"><c:if test="${requestScope.CONFIGS['displayAddToCartOnFeaturedItems']==true}">/ <a class="addToCart" href="#" productId="${product.id}"><s:message code="button.label.addToCart" text="Add to cart" /></a></c:if></c:when><c:otherwise>/ <a class="addToCart" href="#" productId="${product.id}"><s:message code="button.label.addToCart" text="Add to cart" /></a></c:otherwise></c:choose> --%>
+<!-- 													</h5> -->
+<!-- 												</div> -->
+<!-- 										</div> -->
+<%-- 										</c:forEach>    --%>
