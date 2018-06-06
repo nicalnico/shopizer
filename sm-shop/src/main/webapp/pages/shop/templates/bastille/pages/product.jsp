@@ -141,12 +141,12 @@
 									</h4>
 									<jsp:include
 										page="/pages/shop/common/catalog/addToCartProduct.jsp" />
-									<div class="action-heiper">
-										<iframe
-											src="https://www.facebook.com/plugins/share_button.php?locale=${LOCALE.language}_${LOCALE.country}&href=<c:out value="${requestScope.CONFIGS['SHOP_SCHEME']}"/>%3A%2F%2F<c:out value="${requestScope.MERCHANT_STORE.domainName}"/><c:url value="/shop/${product.description.friendlyUrl}.html"/>&layout=button_count&size=large&mobile_iframe=true&appId=<c:out value="${requestScope.CONFIGS['shopizer.facebook-appid']}"/>&width=83&height=28"
-											width="100" height="28" style="border: none; overflow: hidden"
-											scrolling="no" frameborder="0" allowTransparency="true"></iframe>
-									</div>
+<!-- 									<div class="action-heiper"> -->
+<!-- 										<iframe -->
+<%-- 											src="https://www.facebook.com/plugins/share_button.php?locale=${LOCALE.language}_${LOCALE.country}&href=<c:out value="${requestScope.CONFIGS['SHOP_SCHEME']}"/>%3A%2F%2F<c:out value="${requestScope.MERCHANT_STORE.domainName}"/><c:url value="/shop/${product.description.friendlyUrl}.html"/>&layout=button_count&size=large&mobile_iframe=true&appId=<c:out value="${requestScope.CONFIGS['shopizer.facebook-appid']}"/>&width=83&height=28" --%>
+<!-- 											width="100" height="28" style="border: none; overflow: hidden" -->
+<!-- 											scrolling="no" frameborder="0" allowTransparency="true"></iframe> -->
+<!-- 									</div> -->
 								</div>
 							</div>
 						</div>
@@ -280,58 +280,47 @@
 <%-- 					</c:if> --%>
 <!-- 				</div> -->
 			</div>
-		</div>
-	</div>
-</div>
-</div>
-</div>
-
-<c:if test="${relatedProducts!=null}">
-<!-- 	<div class="all-hyperion-page"> -->
-		<div class="container">
-			<div class="row">
+			
+			<!-- Related items -->
+			<c:if test="${relatedProducts!=null}">
 				<div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
-		
-						<!-- Related items -->
-						
-	<!-- 					<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12"> -->
-						
-							<div
-								class="feature-preduct-area hyperion home-page-2 pb-50 pb-50-md"
-								style="padding-top: 40px !important;padding-bottom:10px !important;">
-								<div class="row">
-									<div class="col-lg-12">
-										<div class="hyper-title">
-											<h4 class="text-uppercase">
-												<s:message code="label.product.related.title"
-													text="Related items" />
-											</h4>
-										</div>
+					<div class="feature-preduct-area hyperion home-page-2 pb-50 pb-50-md"
+						style="padding-top: 40px !important;padding-bottom:10px !important;">
+						<div class="row">
+								<div class="col-lg-12">
+									<div class="hyper-title">
+										<h4 class="text-uppercase">
+											<s:message code="label.product.related.title"
+												text="Related items" />
+										</h4>
 									</div>
 								</div>
-								<div class="row">
-									<div class="col-lg-12">
-										<div>
-											<div>
-												<!-- Iterate over featuredItems -->
-												<c:set var="ITEMS" value="${relatedProducts}" scope="request" />
-												<jsp:include
-													page="/pages/shop/templates/bastille/sections/productBox.jsp" />
-											</div>
-										</div>
+						</div>
+						<div class="row">
+							<div class="col-lg-12">
+								<div>
+									<div>
+										<!-- Iterate over featuredItems -->
+										<c:set var="ITEMS" value="${relatedProducts}" scope="request" />
+										<jsp:include
+											page="/pages/shop/templates/bastille/sections/productBox.jsp" />
 									</div>
 								</div>
 							</div>
-						
-						<c:if test="${requestScope.CONTENT['sideBar']!=null}">
-										<sm:pageContent contentCode="sideBar"/>
-						</c:if>
-	<!-- 				</div> -->
+						</div>
+					</div>
+					
+					<c:if test="${requestScope.CONTENT['sideBar']!=null}">
+									<sm:pageContent contentCode="sideBar"/>
+					</c:if>
+		<!-- 				</div> -->
 				</div>
-			</div>
+			</c:if>
 		</div>
-<!-- 	</div> -->
-</c:if>
+	</div>
+</div>
+
+
 <script>
 		
 		$(function () {
