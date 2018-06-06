@@ -46,9 +46,6 @@ section.products-grid {
 section.products-grid .product {
     position: relative;
     overflow: hidden;
-    margin-bottom: 0px;
-    margin-bottom:20px;
-    height:440px;
 }
 
 section.products-grid .product .thumbnail {

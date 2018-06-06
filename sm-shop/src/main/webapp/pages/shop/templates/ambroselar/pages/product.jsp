@@ -1,4 +1,3 @@
-
 <%
 	response.setCharacterEncoding("UTF-8");
 	response.setHeader("Cache-Control", "no-cache");
@@ -152,7 +151,7 @@
 						</div>
 					</div>
 					<!-- product-simple-area-end -->
-					<div class="product-info-detailed pb-80 ptb-40-md ptb-20-xs">
+					<div class="product-info-detailed pb-10 ptb-40-md ptb-20-xs">
 						<div class="row">
 							<div class="col-lg-12">
 								<div class="product-info-tab">
@@ -243,42 +242,6 @@
 						<!--fin col 9 -->
 					</div>
 				</div>
-
-				<!-- Related items -->
-
-				<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-					<c:if test="${relatedProducts!=null}">
-						<div
-							class="feature-preduct-area hyperion home-page-2 pb-50 pb-50-md"
-							style="padding-top: 40px !important;padding-bottom:10px !important;">
-							<div class="row">
-								<div class="col-lg-12">
-									<div class="hyper-title">
-										<h4 class="text-uppercase">
-											<s:message code="label.product.related.title"
-												text="Related items" />
-										</h4>
-									</div>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-lg-12">
-									<div>
-										<div>
-											<!-- Iterate over featuredItems -->
-											<c:set var="ITEMS" value="${relatedProducts}" scope="request" />
-											<jsp:include
-												page="/pages/shop/templates/generic/sections/productBox.jsp" />
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</c:if>
-					<c:if test="${requestScope.CONTENT['sideBar']!=null}">
-									<sm:pageContent contentCode="sideBar"/>
-					</c:if>
-				</div>
 			</div>
 		</div>
 	</div>
@@ -286,6 +249,52 @@
 </div>
 </div>
 
+<c:if test="${relatedProducts!=null}">
+<!-- 	<div class="all-hyperion-page"> -->
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+		
+						<!-- Related items -->
+						
+	<!-- 					<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12"> -->
+						
+							<div
+								class="feature-preduct-area hyperion home-page-2 pb-50 pb-50-md"
+								style="padding-top: 40px !important;padding-bottom:10px !important;">
+								<div class="row">
+									<div class="col-lg-12">
+										<div class="hyper-title">
+											<h4 class="text-uppercase">
+												<s:message code="label.product.related.title"
+													text="Related items" />
+											</h4>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-lg-12">
+										<div>
+											<div>
+												<!-- Iterate over featuredItems -->
+												<c:set var="ITEMS" value="${relatedProducts}" scope="request" />
+												<jsp:include
+													page="/pages/shop/templates/ambroselar/sections/productBox.jsp" />
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						
+						<c:if test="${requestScope.CONTENT['sideBar']!=null}">
+										<sm:pageContent contentCode="sideBar"/>
+						</c:if>
+	<!-- 				</div> -->
+				</div>
+			</div>
+		</div>
+<!-- 	</div> -->
+</c:if>
 <script>
 		
 		$(function () {
