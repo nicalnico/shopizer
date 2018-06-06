@@ -244,7 +244,7 @@ response.setDateHeader ("Expires", -1);
 									    <!-- Iterate over featuredItems -->
 										<c:set var="ITEMS" value="${requestScope.FEATURED_ITEM}" scope="request" />
 										<c:set var="FEATURED" value="true" scope="request" />
-	                         			<jsp:include page="/pages/shop/templates/exoticamobilia/sections/productBox.jsp" />
+	                         			<jsp:include page="/pages/shop/templates/bastille/sections/productBox.jsp" />
 									</ul>
 									
 						</div>
@@ -254,7 +254,7 @@ response.setDateHeader ("Expires", -1);
 									<ul class="thumbnails product-list">
 										<!-- Iterate over featuredItems -->
                          				<c:set var="ITEMS" value="${requestScope.SPECIALS}" scope="request" />
-	                         			<jsp:include page="/pages/shop/templates/exoticamobilia/sections/productBox.jsp" />
+	                         			<jsp:include page="/pages/shop/templates/bastille/sections/productBox.jsp" />
 									</ul>
 						</div>
 						</c:if>
