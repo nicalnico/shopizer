@@ -16,8 +16,8 @@ response.setDateHeader ("Expires", -1);
 
 	
 	<!-- include all header js and css -->
-	<jsp:include page="/pages/shop/templates/bastille/sections/jsLinks.jsp" />
-    <jsp:include page="/pages/shop/templates/bastille/sections/shopLinks.jsp" />
+<%-- 	<jsp:include page="/pages/shop/templates/bastille/sections/jsLinks.jsp" /> --%>
+<%--     <jsp:include page="/pages/shop/templates/bastille/sections/shopLinks.jsp" /> --%>
                 
 <div id="productsContainer" class="list-unstyled"> 
 										<c:forEach items="${requestScope.ITEMS}" var="product">

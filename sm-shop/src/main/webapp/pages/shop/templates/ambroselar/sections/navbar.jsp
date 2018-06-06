@@ -70,6 +70,7 @@ $(document).ready(function() {
 	
 	
     //full view search
+    /*
 	$('#searchField.typeahead').typeahead({
 	    hint: true,
 	    highlight: true,
@@ -96,7 +97,7 @@ $(document).ready(function() {
 	    	suggestion: function (data) { return searchTemplate.render(data); }
 	    }
 	});
-
+	*/
 });
 
 </script>

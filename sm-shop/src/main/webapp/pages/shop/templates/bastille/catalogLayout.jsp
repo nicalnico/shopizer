@@ -56,9 +56,11 @@ response.setDateHeader ("Expires", -1);
 						{{/canBePurchased}}
 						<!--  *** image  *** -->
 						<div class="product-image">
-    					{{#image}}                              
-							<img class="product-img" src="<c:url value=""/>{{image.imageUrl}}"><a class="overlay" href="<c:url value="/shop/product/" />{{description.friendlyUrl}}.html"><img class="product-img" src="<c:url value="/"/>{{image.imageUrl}}"></a>
-   					 	{{/image}}
+                    	    {{#image}}
+								<a href="<c:url value="/shop/product/" />{{description.friendlyUrl}}.html">
+									<img src="<c:url value=""/>{{image.imageUrl}}" alt="" />
+								</a>
+							{{/image}}
     					</div>
 
 						<!--  *** Product Name & Price Starts *** -->
