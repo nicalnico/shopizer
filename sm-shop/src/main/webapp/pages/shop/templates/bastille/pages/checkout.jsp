@@ -54,11 +54,11 @@ Templates definition
 			{{#shippingOptions}}
 				<tr>
 				<td style="border: none !important;">	
-				<input type="radio" name="selectedShippingOption.optionId" code="{{shippingModuleCode}}" class="shippingOption" id="{{optionId}}" value="{{optionId}}" {{#checked}} checked="checked"{{/checked}}>
+				<input style="display: none;" type="radio" name="selectedShippingOption.optionId" code="{{shippingModuleCode}}" class="shippingOption" id="{{optionId}}" value="{{optionId}}" {{#checked}} checked="checked"{{/checked}}>
 				</td>
 				<td style="border: none !important;">	
 				<label> 
-					{{description}} - {{optionPriceText}}
+					{{optionPriceText}}
 				</label>
 				</td>
 				</tr>
@@ -850,7 +850,7 @@ function initPayment(paymentSelection) {
 																<s:message code="module.shipping.${option.shippingModuleCode}" arguments="${requestScope.MERCHANT_STORE.storename}" text="${option.shippingModuleCode}"/>: <span class="amount">${option.optionPriceText}</span>
 															</label>
 															</td>
-															</tr>
+															</t{{description}} - r>
 															<c:if test="${option.note!=null}">
 															<tr>
 																<td colspan="2" style="border: none !important;"><span><small><c:out value="${option.note}"/></small></span></td>
