@@ -13,17 +13,17 @@ response.setDateHeader ("Expires", -1);
  
 <%@page contentType="text/html"%>
 <%@page pageEncoding="UTF-8"%>
- 
-
+	    	
 	<div id="shop" class="">
 	 
 	       <div style="margin-top: 5px; max-width:100%" class="banner">
+			
+	  			<style>
+				 	.banner img {
+				 		max-width:100% !important; 
+				 	}
+				</style>
 			    
-		      <style>
-		    	.banner img {
-		    		max-width:100% !important; 
-		    	}
-	    	</style
 	    	<script src="<c:url value="/resources/js/jquery-1.11.3.min.js" />"></script>
 		    <script	src="<c:url value="/resources/js/jssor.slider-27.1.0.min.js" />"></script>
 			              
@@ -44,6 +44,7 @@ response.setDateHeader ("Expires", -1);
 			            var jssor_1_options = {
 			              $AutoPlay: 1,
 			              $SlideDuration: 180,
+			              $LazyLoading: 0,
 			              $SlideshowOptions: {
 			                $Class: $JssorSlideshowRunner$,
 			                $Transitions: jssor_1_SlideshowTransitions
@@ -129,24 +130,32 @@ response.setDateHeader ("Expires", -1);
 			        </div>
 			        <div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:1300px;height:500px;overflow:hidden;">
 			            <div data-p="225.00">
-			                <img data-u="image" src="/resources/img/banner/bastille/slide_8.jpg" />
-			                <div data-u="caption" data-t="0" style="position:absolute;top:31px;left:-36px;width:844px;height:75px;font-size:60px;color:#fc020e;line-height:1.2;text-align:center;">LaBastille is a taste of France<br />
-			                </div>
+            	   	    	<a href="https://labastille.com.au/shop/category/duck-products.html/ref=c:150" data-p="170.00">
+			                	<img data-u="image" src="/resources/img/banner/bastille/slide_8.jpg" />
+			                	<div data-u="caption" data-t="0" style="position:absolute;top:31px;left:-36px;width:844px;height:75px;font-size:60px;color:#fc020e;line-height:1.2;text-align:center;">LaBastille is a taste of France<br />
+			                	</div>
+			            	</a>			               
 			            </div>
 			            <div data-p="225.00">
-			                <img data-u="image" src="/resources/img/banner/bastille/slide_5.jpg" />
-			                <div data-u="caption" data-t="1" style="position:absolute;top:0px;left:0px;width:532px;height:74px;font-size:60px;color:#fc000c;line-height:1.2;text-align:center;">Try our delicious Foie Gras<br />
-			                </div>
+			                <a href="https://labastille.com.au/shop/category/duck-products.html/ref=c:150" data-p="170.00">
+				                <img data-u="image" src="/resources/img/banner/bastille/slide_5.jpg" />
+				                <div data-u="caption" data-t="1" style="position:absolute;top:0px;left:0px;width:532px;height:74px;font-size:60px;color:#fc000c;line-height:1.2;text-align:center;">Try our delicious Foie Gras<br />
+				                </div>
+				            </a>
 			            </div>
 			            <div data-p="225.00">
-			                <img data-u="image" src="/resources/img/banner/bastille/slide_4.jpg" />
-			                <div data-u="caption" data-t="2" style="position:absolute;top:53px;left:-8px;width:649px;height:72px;font-size:60px;color:#f80006;line-height:1.2;text-align:center;">Wonderful Duck confit<br />
-			                </div>
+			                <a href="https://labastille.com.au/shop/category/duck-products.html/ref=c:150" data-p="170.00">
+				                <img data-u="image" src="/resources/img/banner/bastille/slide_4.jpg" />
+				                <div data-u="caption" data-t="2" style="position:absolute;top:53px;left:-8px;width:649px;height:72px;font-size:60px;color:#f80006;line-height:1.2;text-align:center;">Wonderful Duck confit<br />
+				                </div>
+				            </a>
 			            </div>
 			            <div data-p="225.00">
-			                <img data-u="image" src="/resources/img/banner/bastille/alexis-minchella-web.jpg" />
-			                <div data-u="caption" data-t="3" style="position:absolute;top:21px;left:-101px;width:649px;height:72px;font-size:60px;color:#fb0202;line-height:1.2;text-align:center;">Feel French<br />
-			                </div>
+			                <a href="https://labastille.com.au/shop/category/duck-products.html/ref=c:150" data-p="170.00">
+				                <img data-u="image" src="/resources/img/banner/bastille/alexis-minchella-web.jpg" />
+				                <div data-u="caption" data-t="3" style="position:absolute;top:21px;left:-101px;width:649px;height:72px;font-size:60px;color:#fb0202;line-height:1.2;text-align:center;">Feel French<br />
+				                </div>
+				            </a>
 			            </div>
 			        </div>
 			        <!-- Bullet Navigator -->
@@ -186,6 +195,14 @@ response.setDateHeader ("Expires", -1);
 	</c:if>
 			
 
+<div class="row text-center" style="margin-top: 5px;" >
+	<div class="shop-now">
+		<a href="<c:url value="/shop/category/duck-products.html/ref=c:150"/>">
+		<s:message code="label.shop.now" text="Shop Now" /></a>
+	</div>
+</div>
+
+
 	<div class="row text-center" style="margin-top: 5px;" >
 			<div class="col-lg-3 col-md-6 col-sm-6">
 				<div class="single-process">
@@ -195,7 +212,7 @@ response.setDateHeader ("Expires", -1);
 					</div>
 					<!-- process Content -->
 					<div class="process_content">
-						<h3>Free Shipping over $150</h3>
+						<h3>Free Shipping over $100</h3>
 						<p>In Australia</p>
 					</div>
 				</div>

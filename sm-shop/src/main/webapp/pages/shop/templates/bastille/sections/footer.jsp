@@ -15,6 +15,40 @@ response.setDateHeader ("Expires", -1);
 <%@page contentType="text/html"%>
 <%@page pageEncoding="UTF-8"%>
 
+<div class="footer-top-area ptb-10">
+	<div class="container">
+		<div class="row h2">
+			Shop with <span style="color:#FF2700;" >Confidence</span>
+		</div>
+		
+		<div class="row" >
+			<span class="img-checkmark">			
+				<img data-u="image" src="/resources/img/admin/checkmark_checked_2.png" />
+				Keeping our customers safe online is our number 1 priority 			
+			</span>
+		</div>
+		<div class="row" >		
+			<span class="img-checkmark">			
+				<img data-u="image" src="/resources/img/admin/checkmark_checked_2.png" />
+				Choose between Visa, MasterCard or American Express for your payments
+			</span> 				
+			<span style="margin-left: 5px;">
+				<img style="logo-vis" data-u="image" src="/resources/img/payment/Payment-Gatway-icon_0000_logo_visa.png" />
+				<img style="logo-mastercard" data-u="image" src="/resources/img/payment/Payment-Gatway-icon_0001_logo_mastercard.png" />		
+				<img style="logo-american-express" data-u="image" src="/resources/img/payment/Payment-Gatway-icon_0002_logo_american-express.png" />
+			</span>
+		</div>
+		<div class="row" >
+			<span class="img-checkmark">			
+				<img data-u="image" src="/resources/img/admin/checkmark_checked_2.png" />
+				All Credit Card transactions are processed by <a href="https://stripe.com" target="_blank">Strype</a> a Global Payment Provider processing payments all over the world. 		
+			</span>
+		</div>
+	</div>
+</div>
+
+
+
 		<!-- footer-area-start -->
 		<div class="footer-area ptb-80">
 			<div class="container">

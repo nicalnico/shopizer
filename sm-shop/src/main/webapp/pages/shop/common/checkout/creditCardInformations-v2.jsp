@@ -141,16 +141,16 @@ response.setDateHeader ("Expires", -1);
 						<label class="control-label"><s:message
 								code="label.payment.creditcard.cardexpiry"
 								text="Card expiry year" /><span class="required">*</span></label>
-						<div class="col-xs-4 no-padding-left">
+						<div class="col-xs-5 no-padding-left">
 							<select id="creditCardDays"
 								name="payment['creditcard_card_expirationmonth']"
-								class="input-large form-control width-75"
+								class="input-large form-control width-100"
 								data-stripe="exp-month"></select>
 						</div>
-						<div class="col-xs-4 no-padding-left">
+						<div class="col-xs-6 no-padding-left">
 							<select id="creditCardYears"
 								name="payment['creditcard_card_expirationyear']"
-								class="input-large form-control width-75" data-stripe="exp-year"></select>
+								class="input-large form-control width-100" data-stripe="exp-year"></select>
 						</div>
 					</div>
 				</div>

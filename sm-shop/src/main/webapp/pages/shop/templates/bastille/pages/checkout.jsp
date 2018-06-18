@@ -639,7 +639,7 @@ function initPayment(paymentSelection) {
 										    <form:select cssClass="billing-country-list" path="customer.billing.country" style="background-color: rgb(255, 255, 255);">
 											  	<form:options items="${countries}" itemValue="isoCode" itemLabel="name"/>
 										     </form:select>	
-										     <p style="font-size: 12px;">For international shipping <a href="https://labastille.com.au/shop/store/contactus.html">please contact us</a> for a quote</p>									
+										     <p style="font-size: 12px;">For international shipping <a href='https://labastille.com.au/shop/store/contactus.html'>please contact us</a> for a quote</p>									
 										</div>
 									</div>
 									<div class="col-md-6">
@@ -679,6 +679,16 @@ function initPayment(paymentSelection) {
 											<span id="error-customer.billing.phone" class="error"></span>
 										</div>
 									</div>
+<!-- 									<div class="col-md-12"> -->
+<!-- 											<div class="checkout-form-list create-acc">	 -->
+<!-- 												<input id="cbox_subscribe" type="checkbox"  checked="checked" /> -->
+<%-- 												<label><s:message code="label.customer.subscribe.newsletter" text="Subscribe to our newsletter and receive special offer"/></label> --%>
+<!-- 											</div> -->
+<!-- 											<div id="cbox_info_subscribe" class="checkout-form-list subscribe-newsletter"> -->
+<%-- 												<p><s:message code="label.customer.createaccount.text" text="Create an account by entering the information below. If you are a returning customer please login using the link at the top of the page."/></p>												 --%>
+<%-- 												<form:input id="customer.subscribenewsletter" cssClass="required" path="customer.clearPassword" title="${msgPassword}"/>	 --%>
+<!-- 											</div> -->
+<!-- 										</div>	 -->
 									<sec:authorize access="!hasRole('AUTH_CUSTOMER') and !fullyAuthenticated">
 									<div class="col-md-12">
 										<div class="checkout-form-list create-acc">	

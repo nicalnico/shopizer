@@ -107,6 +107,13 @@ response.setDateHeader ("Expires", -1);
 
 <!-- header-start -->
 		<header>
+			<div class="header-top-message-area">
+				<div class="container">
+					<div class="row">
+						$9.90 FLAT RATE SHIPPING ALL IN AUSTRALIA * FREE SHIPPING FOR ORDERS OVER $100
+					</div>
+				</div>
+			</div>
 			<div class="header-top-area ptb-10 hidden-xs">
 				<div class="container">
 					<div class="row">
@@ -132,8 +139,12 @@ response.setDateHeader ("Expires", -1);
 						</div>
 						<div class="col-lg-3 col-md-4 col-sm-4">
 							<div class="header-top-right">
-							<!-- Empty placeholder -->
+								<i class="fa fa-phone"></i><c:out value="${requestScope.MERCHANT_STORE.storephone}"/>
 							</div>
+							<div class="header-top-right">
+								<i class="fa fa-envelope"></i>
+								<a href="mailto:"<c:out value="${requestScope.MERCHANT_STORE.storeEmailAddress}"/>" target="_top"> <c:out value="${requestScope.MERCHANT_STORE.storeEmailAddress}"/> </a>
+							</div>							
 						</div>
 					</div>
 				</div>

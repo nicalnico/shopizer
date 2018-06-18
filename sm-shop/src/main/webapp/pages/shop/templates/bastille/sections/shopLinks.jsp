@@ -83,7 +83,7 @@
 	  	   var _gaq = _gaq || [];
 	  	   _gaq.push(['_setAccount', '<c:out value="${requestScope.CONFIGS['google_analytics_url']}"/>']);
 	  	   _gaq.push(['_trackPageview']);
-
+	  	   
 	  	   (function() {
 	    		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
 	    		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
@@ -92,5 +92,17 @@
 	  	//]]> 
 	</script>
 	</c:if>
+	
+	
+	
+	<!-- Global site tag (gtag.js) - Google AdWords: 802166772 -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=AW-802166772"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+	
+	  gtag('config', 'AW-802166772');
+	</script>
 	
 	

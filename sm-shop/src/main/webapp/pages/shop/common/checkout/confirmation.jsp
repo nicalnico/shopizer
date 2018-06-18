@@ -84,6 +84,17 @@ $(document).ready(function() {
 	//]]> 
 </script>
 
+
+<!-- Google Adwords Event snippet for Sales conversion page -->
+<script>
+  gtag('event', 'conversion', {
+      'send_to': 'AW-802166772/x0bLCKHK64MBEPSvwP4C',
+      'value': '<sm:monetary value="${order.total.value}"/>',
+      'currency': 'AUD',
+      'transaction_id': '<c:out value="${order.id}"/>'
+  });
+</script>
+
 </c:if>
 
 

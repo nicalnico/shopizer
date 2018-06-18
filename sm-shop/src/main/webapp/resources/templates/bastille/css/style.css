@@ -143,6 +143,12 @@ body {}
 .header-top-area {
   background: #f2f2f2 none repeat scroll 0 0;
 }
+.header-top-message-area {
+    background: #2E2D25 none repeat scroll 0 0;
+    color: #ffffff;
+    text-align: center;
+}
+
 .header-left-menu {
   background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
   border: medium none;
@@ -3130,6 +3136,7 @@ a.shipping-calculator-button:hover{
 	white-space: nowrap;
 }
 .cart_totals table tr.order-total .amount{}
+
 .wc-proceed-to-checkout a{
 	background: #C2A773 none repeat scroll 0 0;
 	color: #fff;
@@ -3143,6 +3150,22 @@ a.shipping-calculator-button:hover{
 	text-transform: none;
 }
 .wc-proceed-to-checkout a:hover{
+	background: #000;color:#fff;
+}
+
+.shop-now a{
+	background: #C2A773 none repeat scroll 0 0;
+	color: #fff;
+	display: inline-block;
+	font-size: 20px;
+	font-weight: 700;
+	height: 50px;
+	line-height: 50px;
+	margin-top: 10px;
+	padding: 0 30px;
+	text-transform: none;
+}
+.shop-now a:hover{
 	background: #000;color:#fff;
 }
 
@@ -3463,6 +3486,10 @@ p.checkout-coupon input[type=submit]{
 	width:75% !important;
 }
 
+.width-100 {
+	width:100% !important;
+}
+
 .margin-top-30 {
 	margin-top: 30px !important;	
 }
@@ -3483,3 +3510,15 @@ p.checkout-coupon input[type=submit]{
 #creditcard_card_image img {
 	max-width:none;
 }
+
+.header-top-right .fa {
+	color: #FF2700;
+}
+
+.footer-top-area {
+    background: #f2f2f2 none repeat scroll 0 0;
+}
+.footer-top-area .img-checkmark img {
+	max-width: 4%;
+}
+
