@@ -3519,6 +3519,32 @@ p.checkout-coupon input[type=submit]{
     background: #f2f2f2 none repeat scroll 0 0;
 }
 .footer-top-area .img-checkmark img {
-	max-width: 4%;
+	max-width: 3%;
 }
 
+.signup input[type="submit"] {
+	background: #FF2700 none repeat scroll 0 0;
+	color: #fff;
+    display: inline-block;
+    font-size: 20px;
+    font-weight: 700;
+    height: 50px;
+    line-height: 50px;
+    margin-top: 10px;
+    padding: 0 30px;
+    text-transform: none;
+}
+
+.signup {
+	display: inline-block;
+	font-size: 20px;
+	font-weight: 700;
+	line-height: 50px;
+	margin-top: 10px;
+	padding: 15px;
+	text-transform: none;
+}
+
+.signup .fa {
+	color: #FF2700;
+}
