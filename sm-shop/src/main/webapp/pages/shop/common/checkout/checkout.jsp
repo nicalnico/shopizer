@@ -1507,3 +1507,8 @@ $(document).ready(function() {
 			
 	</form:form>
 	</div>
+	
+<!-- Facebook Pixel AddPaymentInfo 2 -->
+<script>
+  fbq('track', 'AddPaymentInfo');
+</script>

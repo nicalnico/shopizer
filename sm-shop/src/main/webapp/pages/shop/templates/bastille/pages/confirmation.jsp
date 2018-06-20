@@ -84,9 +84,9 @@ $(document).ready(function() {
 	//]]> 
 </script>
 
-<%-- 
-<!-- Google Adwords Event snippet for Sales conversion page -->
-<script> 
+
+<!-- Google Adwords Event snippet for Sales conversion page Bastille-->
+<script>
   gtag('event', 'conversion', {
       'send_to': 'AW-802166772/x0bLCKHK64MBEPSvwP4C',
       'value': '<sm:monetary value="${order.total.value}"/>',
@@ -95,7 +95,7 @@ $(document).ready(function() {
   });
 </script>
 
-<!-- Facebook Pixel Purchase -->
+<!-- Facebook Pixel Purchase Bastille-->
 <script>
   fbq('track', 'Purchase', {
     value: '<sm:monetary value="${order.total.value}"/>'',
@@ -103,7 +103,6 @@ $(document).ready(function() {
     content_ids: '<c:out value="${order.id}"/>',
   });
 </script>
---%>
 
 </c:if>
 
@@ -144,3 +143,25 @@ $(document).ready(function() {
           </div>
           
       </div>
+      
+<!-- add newsletter -->
+<!-- Begin MailChimp Signup Form -->
+<div class="row text-center" style="margin-top: 5px;">
+	<div class="signup">
+	<form action="https://labastille.us18.list-manage.com/subscribe/post?u=0c2a7258b68e61aa3c539ff35&amp;id=70c2c820ab" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+	    <div>
+			<p>Get the latest news, exciting offers and discounts to your inbox</p>
+			<div class="">			
+				<label for="mce-EMAIL"><i class="fa fa-envelope-o"></i></label>
+				<input type="email" name="EMAIL" class="required email" id="mce-EMAIL" title="Email Address" class="input-text required-entry validate-email" />				
+				<input type="submit" value="SIGN UP" name="subscribe" id="mc-embedded-subscribe" class="button">
+			</div>
+			<div id="mce-responses" class="clear">
+				<div class="response" id="mce-error-response" style="display:none"></div>
+				<div class="response" id="mce-success-response" style="display:none"></div>
+			</div> 
+		 <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+	    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_0c2a7258b68e61aa3c539ff35_70c2c820ab" tabindex="-1" value=""></div>
+	    </div>
+	</form>
+</div>

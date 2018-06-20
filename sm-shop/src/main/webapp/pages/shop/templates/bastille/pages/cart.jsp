@@ -300,3 +300,10 @@
 		});
 	});
 </script>
+
+<!-- Facebook Pixel InitiateCheckout -->
+<script>
+  fbq('track', 'InitiateCheckout');
+</script>
+
+

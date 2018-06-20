@@ -249,6 +249,12 @@
   		<put-attribute name="footer" value="/pages/shop/templates/{1}/sections/footer.jsp" />
   	</definition>
   	
+  	<definition name="confirmation.bastille" template="/pages/shop/templates/bastille/catalogLayout.jsp">
+  	  	<put-attribute name="header" value="/pages/shop/templates/bastille/sections/header.jsp" />
+  		<put-attribute name="navbar" value="/pages/shop/templates/bastille/sections/navbar.jsp" />
+  		<put-attribute name="body" value="/pages/shop/templates/bastille/pages/confirmation.jsp" />
+  		<put-attribute name="footer" value="/pages/shop/templates/bastille/sections/footer.jsp" />
+  	</definition>
   	
   	<!--  page not found -->
   	<definition name="404.*" template="/pages/shop/templates/{1}/catalogLayout.jsp">

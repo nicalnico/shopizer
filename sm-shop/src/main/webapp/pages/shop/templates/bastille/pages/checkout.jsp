@@ -535,6 +535,13 @@ function initPayment(paymentSelection) {
 
 </script>
 
+<!-- Facebook Pixel AddPaymentInfo Bastille -->
+<script>
+  fbq('track', 'AddPaymentInfo');
+</script>
+
+
+
 		<!-- page-title-wrapper-end -->
 		<!-- entry-header-area start -->
 		<div class="entry-header-area ptb-40">
