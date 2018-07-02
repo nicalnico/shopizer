@@ -95,6 +95,30 @@ $(document).ready(function() {
   });
 </script>
 
+
+
+<!-- Google Merchants snippet for Customer review page Bastille-->
+<script src="https://apis.google.com/js/platform.js?onload=renderOptIn" async defer></script>
+<script>
+
+
+  window.renderOptIn = function() {
+    window.gapi.load('surveyoptin', function() {
+      window.gapi.surveyoptin.render(
+        {
+          // REQUIRED FIELDS
+          "merchant_id": 123349391,
+          "order_id": '<c:out value="${order.id}"/>',
+          "email": '<c:out value="${order.customer.emailAddress}" />',
+          "delivery_country": "AU",
+          "estimated_delivery_date": '<c:out value="${orderdeliveryestimate}" />', 
+          "products": '<c:out value="${productsgtin}" escapeXml="false" />'
+        });
+    });
+  }
+</script>
+
+
 <!-- Facebook Pixel Purchase Bastille-->
 <script>
   fbq('track', 'Purchase', {

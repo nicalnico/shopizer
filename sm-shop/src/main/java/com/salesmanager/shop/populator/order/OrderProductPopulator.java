@@ -89,6 +89,7 @@ public class OrderProductPopulator extends
 			target.setProductName(source.getProduct().getDescriptions().iterator().next().getName());
 			target.setProductQuantity(source.getQuantity());
 			target.setSku(source.getProduct().getSku());
+			target.setRefSku(source.getProduct().getRefSku());
 			
 			FinalPrice finalPrice = source.getFinalPrice();
 			if(finalPrice==null) {

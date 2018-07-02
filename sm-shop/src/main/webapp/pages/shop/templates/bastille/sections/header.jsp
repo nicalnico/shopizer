@@ -144,7 +144,11 @@ response.setDateHeader ("Expires", -1);
 							<div class="header-top-right">
 								<i class="fa fa-envelope"></i>
 								<a href="mailto:"<c:out value="${requestScope.MERCHANT_STORE.storeEmailAddress}"/>" target="_top"> <c:out value="${requestScope.MERCHANT_STORE.storeEmailAddress}"/> </a>
-							</div>							
+							</div>
+							<div class="header-top-right">							
+								<script src="https://apis.google.com/js/platform.js" async defer></script>​								
+								<g:ratingbadge merchant_id=123349391></g:ratingbadge>
+​							</div>								
 						</div>
 					</div>
 				</div>

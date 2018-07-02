@@ -86,6 +86,7 @@ public class PersistableOrderProductPopulator extends
 			target.setProductName(source.getProduct().getDescription().getName());
 			target.setProductQuantity(source.getOrderedQuantity());
 			target.setSku(source.getProduct().getSku());
+			target.setRefSku(source.getProduct().getRefSku());
 			
 			OrderProductPrice orderProductPrice = new OrderProductPrice();
 			orderProductPrice.setDefaultPrice(true);

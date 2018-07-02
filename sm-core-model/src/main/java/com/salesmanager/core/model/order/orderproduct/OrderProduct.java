@@ -33,7 +33,12 @@ public class OrderProduct extends SalesManagerEntity<Long, OrderProduct> {
 
 	@Column (name="PRODUCT_SKU")
 	private String sku;
-
+	
+	//NEW CODE
+	@Column (name="REF_SKU")
+	private String refSku;
+	//NEW CODE END
+	
 	@Column (name="PRODUCT_NAME" , length=64 , nullable=false)
 	private String productName;
 
@@ -129,6 +134,16 @@ public class OrderProduct extends SalesManagerEntity<Long, OrderProduct> {
 		return sku;
 	}
 
+	//NEW CODE
+	public void setRefSku(String refSku) {
+		this.refSku = refSku;
+	}
+
+	public String getRefSku() {
+		return refSku;
+	}
+	//NEW CODE END
+	
 	public void setOneTimeCharge(BigDecimal oneTimeCharge) {
 		this.oneTimeCharge = oneTimeCharge;
 	}

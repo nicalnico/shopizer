@@ -104,6 +104,28 @@
 		
 		  gtag('config', 'AW-802166772');
 		</script>
+		
+		<!-- BEGIN GCR Badge Code -->
+		<script src="https://apis.google.com/js/platform.js?onload=renderBadge"
+		  async defer>
+		</script>
+		
+		<script>
+		  window.renderBadge = function() {
+		    var ratingBadgeContainer = document.createElement("div");
+		      document.body.appendChild(ratingBadgeContainer);
+		      window.gapi.load('ratingbadge', function() {
+		        window.gapi.ratingbadge.render(
+		          ratingBadgeContainer, {
+		            // REQUIRED
+		            "merchant_id": 123349391,
+		            // OPTIONAL
+		            "position": "INLINE"
+		          });           
+		     });
+		  }
+		</script>
+		<!-- END GCR Badge Code -->		
 	</c:if>
 	
 	<!--  May add specific facebook pixel tag -->

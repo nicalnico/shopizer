@@ -11,6 +11,7 @@ import com.salesmanager.core.business.services.shipping.ShippingService;
 import com.salesmanager.core.business.services.shoppingcart.ShoppingCartService;
 import com.salesmanager.core.model.merchant.MerchantStore;
 import com.salesmanager.core.model.order.Order;
+import com.salesmanager.core.model.order.orderproduct.OrderProduct;
 import com.salesmanager.core.model.order.orderproduct.OrderProductDownload;
 import com.salesmanager.core.model.reference.country.Country;
 import com.salesmanager.core.model.reference.language.Language;
@@ -36,7 +37,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
@@ -146,6 +153,27 @@ public class ShoppingOrderConfirmationController extends AbstractController {
         String orderEmailMessage = messages.getMessage("label.checkout.email", orderEmailParams, locale);
 		model.addAttribute("orderemail", orderEmailMessage);
 		
+		//NEW CODE
+	    Date orderDeliveryEstimate = new Date();
+	    Calendar cal = Calendar.getInstance();  
+	    cal.setTime(orderDeliveryEstimate); 
+	    cal = addBusinessDate(cal, 5);
+	    orderDeliveryEstimate = cal.getTime(); 
+		model.addAttribute("orderdeliveryestimate", new SimpleDateFormat("yyyy-MM-dd").format(orderDeliveryEstimate));
+		
+		String products = "[";
+		int numberOfProducts = order.getOrderProducts().size();
+		for (OrderProduct orderProduct : order.getOrderProducts()) {
+			products += "{\"gtin\":'\"" + ((orderProduct.getRefSku().isEmpty()) ? orderProduct.getSku() : orderProduct.getRefSku()) + "\"}";
+			numberOfProducts--;
+			if (numberOfProducts > 0) {
+				products += ",";
+			}			
+		}
+		products += "]";
+		model.addAttribute("productsgtin", products);
+		//NEW CODE END
+		
 		ReadableOrder readableOrder = orderFacade.getReadableOrder(orderId, store, language);
 		
 
@@ -189,6 +217,27 @@ public class ShoppingOrderConfirmationController extends AbstractController {
 		
 	}
 	
+	
+	//NEW CODE
+	public Calendar addBusinessDate(Calendar cal, int numBusinessDays) {
+		  int numNonBusinessDays = 0;
+
+		  for(int i = 0; i < numBusinessDays; i++) {
+		    cal.add(Calendar.DATE, 1);
+
+		    if(cal.get(Calendar.DAY_OF_WEEK) == 1 ||
+		       cal.get(Calendar.DAY_OF_WEEK) == 7) {
+		      numNonBusinessDays++;
+		    }
+		  }
+
+		  if(numNonBusinessDays > 0) {
+		    cal.add(Calendar.DATE, numNonBusinessDays);
+		  }
+
+		  return cal;
+		}
+	//NEW CODE END
 	
 
 
