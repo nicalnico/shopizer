@@ -266,47 +266,84 @@ response.setDateHeader ("Expires", -1);
 	</div>
 			
 			
-			
-			
-			<br/>
-			<sm:shopProductGroup groupName="FEATURED_ITEM"/>
-			<sm:shopProductGroup groupName="SPECIALS"/>
-			
-			<c:if test="${requestScope.FEATURED_ITEM!=null || requestScope.SPECIALS!=null}" >
-			<div class="row-fluid">
-				<div class="span12">
-					<ul class="nav nav-tabs home" id="product-tab">
-						<c:if test="${requestScope.FEATURED_ITEM!=null}" ><li class="active"><a href="#tab1"><s:message code="menu.catalogue-featured" text="Featured items" /></a></li></c:if>
-						<c:if test="${requestScope.SPECIALS!=null}" ><li<c:if test="${requestScope.FEATURED_ITEM==null}"> class="active"</c:if>><a href="#tab2"><s:message code="label.product.specials" text="Specials" /></a></li></c:if>
-					</ul>							 
-					<div class="tab-content">
-						<!-- one div by section -->
-						<c:if test="${requestScope.FEATURED_ITEM!=null}" >
-						
-						<div class="tab-pane active" id="tab1">
-									<ul class="thumbnails product-list">
-									    <!-- Iterate over featuredItems -->
-										<c:set var="ITEMS" value="${requestScope.FEATURED_ITEM}" scope="request" />
-										<c:set var="FEATURED" value="true" scope="request" />
-	                         			<jsp:include page="/pages/shop/templates/exoticamobilia/sections/productBox.jsp" />
-									</ul>
-									
-						</div>
-						</c:if>
-						<c:if test="${requestScope.SPECIALS!=null}" >
-						<div class="tab-pane <c:if test="${requestScope.FEATURED_ITEM==null}">active</c:if>" id="tab2">
-									<ul class="thumbnails product-list">
-										<!-- Iterate over featuredItems -->
-                         				<c:set var="ITEMS" value="${requestScope.SPECIALS}" scope="request" />
-	                         			<jsp:include page="/pages/shop/templates/exoticamobilia/sections/productBox.jsp" />
-									</ul>
-						</div>
-						</c:if>
-
-					</div>							
-				</div>
+		<!-- featured items -->
+		<!-- Using ajax -->
+		
+		
+		<!-- service-area-end -->
+		<!--new-product-area-start -->
+<%-- 		<c:if test="${requestScope.FEATURED_ITEM!=null}"> --%>
+<!-- 		<div class="new-product-area pt-80 pb-20"> -->
+<!-- 			<div class="container"> -->
+<!-- 				<div class="row"> -->
+<!-- 					<div class="col-lg-12"> -->
+<!-- 						<div class="section-title text-center"> -->
+<%-- 							<h2><s:message code="menu.catalogue-featured" text="Featured items" /></h2> --%>
+<%-- 						    <c:if test="${requestScope.CONTENT['featuredItemsText']!=null}"> --%>
+<%-- 			    				<sm:pageContent contentCode="featuredItemsText"/> --%>
+<%-- 		        			</c:if> --%>
+<!-- 						</div> -->
+<!-- 					</div> -->
+<!-- 				</div> -->
+<!-- 			</div> -->
+<!-- 		</div> -->
+<%-- 		</c:if> --%>
+		
+		
+		<!-- featured items -->
+		<section class="products-grid">
+			<div class="container">
+				<h2>Best Seller</h2>
 			</div>
-			</c:if>
+			<div class="container">
+				<div id="featuredItemsContainer" class="row products-container"></div>
+			</div>
+		</section>
+		
+	<!-- load products -->	
+	<script>
+	       $(document).ready(function() {
+	    	   
+	    	   $('#featuredItemsContainer').LoadingOverlay("show");
+	    	   
+				var tpl = $('#productBoxTemplate').text();
+			    tpl = tpl.replace("COLUMN-SIZE", "3");
+			    $('#productBoxTemplate').text(tpl);
+
+				//get products
+				loadFeaturedItems();
+
+          })
+		  
+		  
+		  
+		  function loadFeaturedItems() {
+		  	$.ajax({
+				type: 'GET',
+				dataType: "json",
+				url: '<c:url value="/"/>services/public/<c:out value="${requestScope.MERCHANT_STORE.code}"/>/products/group/FEATURED_ITEM',
+				success: function(productList) {
+
+					//set in slider
+					var productsTemplate = Hogan.compile(document.getElementById("productBoxTemplate").innerHTML);
+					var productsRendred = productsTemplate.render(productList);
+					$('#featuredItemsContainer').append(productsRendred);
+					$('#featuredItemsContainer').LoadingOverlay("hide", true);
+					//call init bindings
+					initBindings();
+					setProductRating(productList.products);
+				},
+				error: function(jqXHR,textStatus,errorThrown) { 
+					$(divProductsContainer).hideLoading();
+					alert('Error ' + jqXHR + "-" + textStatus + "-" + errorThrown);
+				}
+			});
+		  }
+	       
+	        
+	       
+          </script>
+		  <!--- END -->
 
 
 <!-- add newsletter -->
