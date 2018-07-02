@@ -65,6 +65,7 @@ import com.salesmanager.core.model.order.payment.CreditCard;
 import com.salesmanager.core.model.payments.CreditCardPayment;
 import com.salesmanager.core.model.payments.CreditCardType;
 import com.salesmanager.core.model.payments.Payment;
+import com.salesmanager.core.model.payments.PaymentMethod;
 import com.salesmanager.core.model.payments.PaymentType;
 import com.salesmanager.core.model.payments.Transaction;
 import com.salesmanager.core.model.reference.country.Country;
@@ -811,10 +812,13 @@ public class OrderFacadeImpl implements OrderFacade {
 			}
 			
 			//validate shipping
-			if(shippingService.requiresShipping(order.getShoppingCartItems(), store) && order.getSelectedShippingOption()==null) {
+			//NEW CODE should update shipping amount $100 
+			if(	shippingService.requiresShipping(order.getShoppingCartItems(), store) && order.getSelectedShippingOption()==null
+				&& order.getOrderTotalSummary().getTotal().compareTo(new BigDecimal(100)) < 0) {
 				ServiceException serviceException = new ServiceException(ServiceException.EXCEPTION_VALIDATION,"shipping.required");
 				throw serviceException;
 			}
+			//NEW CODE END
 			
 			//pre-validate credit card
 			if(PaymentType.CREDITCARD.name().equals(paymentType) && "true".equals(coreConfiguration.getProperty("VALIDATE_CREDIT_CARD"))) {
