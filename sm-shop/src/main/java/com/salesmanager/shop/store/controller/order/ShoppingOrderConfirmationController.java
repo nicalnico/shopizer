@@ -13,10 +13,12 @@ import com.salesmanager.core.model.merchant.MerchantStore;
 import com.salesmanager.core.model.order.Order;
 import com.salesmanager.core.model.order.orderproduct.OrderProduct;
 import com.salesmanager.core.model.order.orderproduct.OrderProductDownload;
+import com.salesmanager.core.model.order.orderproduct.OrderProductPrice;
 import com.salesmanager.core.model.reference.country.Country;
 import com.salesmanager.core.model.reference.language.Language;
 import com.salesmanager.core.model.reference.zone.Zone;
 import com.salesmanager.shop.constants.Constants;
+import com.salesmanager.shop.model.catalog.product.ProductPrice;
 import com.salesmanager.shop.model.order.ReadableOrder;
 import com.salesmanager.shop.model.order.ReadableOrderProductDownload;
 import com.salesmanager.shop.populator.order.ReadableOrderProductDownloadPopulator;
@@ -38,6 +40,7 @@ import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import java.math.BigDecimal;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -47,6 +50,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+import java.util.Set;
 
 @Controller
 @RequestMapping(Constants.SHOP_URI+"/order")
@@ -171,7 +175,40 @@ public class ShoppingOrderConfirmationController extends AbstractController {
 			}			
 		}
 		products += "]";
-		model.addAttribute("productsgtin", products);
+		model.addAttribute("products_google_review_format", products);
+		
+		products = "[";
+		numberOfProducts = order.getOrderProducts().size();
+		for (OrderProduct orderProduct : order.getOrderProducts()) {
+			products += "{";
+			products += " id: '" +  orderProduct.getSku() + "' ,";
+			products += " quantity: '" +  orderProduct.getProductQuantity()+ "' , ";				
+			Set<OrderProductPrice> prices = orderProduct.getPrices();
+			BigDecimal defaultPrice = null;
+			for(OrderProductPrice price : prices) {	
+				if(price.getDefaultPrice()) {
+					defaultPrice = price.getProductPrice();
+					break;
+				}
+			}
+			if (defaultPrice != null) {
+				products += " item_price: '" +  defaultPrice +  "'";	
+			} else {
+				if (orderProduct.getPrices().isEmpty()) {
+					products += " item_price: '0.01'"; 
+				} else {
+					products += " item_price: '" + ((OrderProductPrice) orderProduct.getPrices().toArray()[0]).getProductPrice() + "' , ";
+				}
+				
+			}
+			products += "} ";
+			numberOfProducts--;
+			if (numberOfProducts > 0) {
+				products += ",";
+			}			
+		}
+		products += "]";
+		model.addAttribute("products_facebook_pixel_format", products);
 		//NEW CODE END
 		
 		ReadableOrder readableOrder = orderFacade.getReadableOrder(orderId, store, language);

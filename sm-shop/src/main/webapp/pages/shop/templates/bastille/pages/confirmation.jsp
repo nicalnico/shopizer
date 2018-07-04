@@ -112,7 +112,7 @@ $(document).ready(function() {
           "email": '<c:out value="${order.customer.emailAddress}" />',
           "delivery_country": "AU",
           "estimated_delivery_date": '<c:out value="${orderdeliveryestimate}" />', 
-          "products": '<c:out value="${productsgtin}" escapeXml="false" />'
+          "products": '<c:out value="${products_google_review_format}" escapeXml="false" />'
         });
     });
   }
@@ -125,7 +125,11 @@ $(document).ready(function() {
     value: '<sm:monetary value="${order.total.value}"/>'',
     currency: 'AUD',
     content_ids: '<c:out value="${order.id}"/>',
+    contents: '<c:out value="${products_facebook_pixel_format}" escapeXml="false" />' 
   });
+
+		  
+		  
 </script>
 
 </c:if>
