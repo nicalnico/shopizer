@@ -168,7 +168,7 @@ public class ShoppingOrderConfirmationController extends AbstractController {
 		String products = "[";
 		int numberOfProducts = order.getOrderProducts().size();
 		for (OrderProduct orderProduct : order.getOrderProducts()) {
-			products += "{\"gtin\":'\"" + ((orderProduct.getRefSku().isEmpty()) ? orderProduct.getSku() : orderProduct.getRefSku()) + "\"}";
+			products += "{\"gtin\":\"" + ((orderProduct.getRefSku().isEmpty()) ? orderProduct.getSku() : orderProduct.getRefSku()) + "\"}";
 			numberOfProducts--;
 			if (numberOfProducts > 0) {
 				products += ",";

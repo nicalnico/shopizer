@@ -91,7 +91,7 @@ $(document).ready(function() {
       'send_to': 'AW-802166772/x0bLCKHK64MBEPSvwP4C',
       'value': '<sm:monetary value="${order.total.value}"/>',
       'currency': 'AUD',
-      'transaction_id': '<c:out value="${order.id}"/>'
+      'transaction_id': <c:out value="${order.id}"/>
   });
 </script>
 
@@ -112,20 +112,24 @@ $(document).ready(function() {
           "email": '<c:out value="${order.customer.emailAddress}" />',
           "delivery_country": "AU",
           "estimated_delivery_date": '<c:out value="${orderdeliveryestimate}" />', 
-          "products": '<c:out value="${products_google_review_format}" escapeXml="false" />'
+          "products": <c:out value="${products_google_review_format}" escapeXml="false" />
         });
     });
   }
+  
+  window.___gcfg = {
+		    lang: 'en_AU'
+		  };
 </script>
 
 
 <!-- Facebook Pixel Purchase Bastille-->
 <script>
   fbq('track', 'Purchase', {
-    value: '<sm:monetary value="${order.total.value}"/>'',
+    value: '<sm:monetary value="${order.total.value}"/>',
     currency: 'AUD',
     content_ids: '<c:out value="${order.id}"/>',
-    contents: '<c:out value="${products_facebook_pixel_format}" escapeXml="false" />' 
+    contents: <c:out value="${products_facebook_pixel_format}" escapeXml="false" />
   });
 
 		  
