@@ -129,7 +129,7 @@
 	</c:if>
 	
 	<!--  May add specific facebook pixel tag -->
-	<c:if test="${requestScope.CONFIGS['google_analytics_url'] != null}">
+	<c:if test="${requestScope.CONFIGS['google_analytics_url'] != null and requestScope.CONFIGS['google_analytics_url'] !='1'}">
 		<!-- Facebook Pixel Code -->
 		<script>
 		  !function(f,b,e,v,n,t,s)
@@ -139,7 +139,7 @@
 		  n.queue=[];t=b.createElement(e);t.async=!0;
 		  t.src=v;s=b.getElementsByTagName(e)[0];
 		  s.parentNode.insertBefore(t,s)}(window, document,'script',
-		  'https://connect.facebook.net/en_US/fbevents.js');
+		  'https://connect.facebook.net/en_US/fbevents.js');		  
 		  fbq('init', '225418511395725');
 		  fbq('track', 'PageView');
 		</script>

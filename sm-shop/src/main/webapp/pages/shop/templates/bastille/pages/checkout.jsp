@@ -696,28 +696,29 @@ function initPayment(paymentSelection) {
 <%-- 												<form:input id="customer.subscribenewsletter" cssClass="required" path="customer.clearPassword" title="${msgPassword}"/>	 --%>
 <!-- 											</div> -->
 <!-- 										</div>	 -->
-									<sec:authorize access="!hasRole('AUTH_CUSTOMER') and !fullyAuthenticated">
-									<div class="col-md-12">
-										<div class="checkout-form-list create-acc">	
-											<input id="cbox" type="checkbox" />
-											<label><s:message code="label.customer.createaccount" text="Create an account?"/></label>
-										</div>
-										<div id="cbox_info" class="checkout-form-list create-account">
-											<p><s:message code="label.customer.createaccount.text" text="Create an account by entering the information below. If you are a returning customer please login using the link at the top of the page."/></p>
-											<s:message code="message.password.required" text="Password is required" var="msgPassword"/>
-											<label><s:message code="label.customer.accountpassword" text="Account password"/>  <span class="required">*</span></label>
-											<form:input id="customer.clearPassword" cssClass="required" path="customer.clearPassword" title="${msgPassword}"/>	
-										</div>
-									</div>								
-									</sec:authorize>
+
+<%-- 									<sec:authorize access="!hasRole('AUTH_CUSTOMER') and !fullyAuthenticated"> --%>
+<!-- 									<div class="col-md-12"> -->
+<!-- 										<div class="checkout-form-list create-acc">	 -->
+<!-- 											<input id="cbox" type="checkbox" /> -->
+<%-- 											<label><s:message code="label.customer.createaccount" text="Create an account?"/></label> --%>
+<!-- 										</div> -->
+<!-- 										<div id="cbox_info" class="checkout-form-list create-account"> -->
+<%-- 											<p><s:message code="label.customer.createaccount.text" text="Create an account by entering the information below. If you are a returning customer please login using the link at the top of the page."/></p> --%>
+<%-- 											<s:message code="message.password.required" text="Password is required" var="msgPassword"/> --%>
+<%-- 											<label><s:message code="label.customer.accountpassword" text="Account password"/>  <span class="required">*</span></label> --%>
+<%-- 											<form:input id="customer.clearPassword" cssClass="required" path="customer.clearPassword" title="${msgPassword}"/>	 --%>
+<!-- 										</div> -->
+<!-- 									</div>								 -->
+<%-- 									</sec:authorize> --%>
 								</div>
 								<c:if test="${shippingQuote!=null}">
-								<div class="different-address">
+									<div class="different-address">
 										<div class="ship-different-title">
-											<h3>
-												<label><s:message code="label.customer.shipping.shipdifferentaddress" text="Ship to a different address?"/></label>
-												<form:checkbox path="shipToDeliveryAddress" id="shipToDeliveryAddress"/>
-											</h3>
+<!-- 											<h3> -->
+<%-- 												<label><s:message code="label.customer.shipping.shipdifferentaddress" text="Ship to a different address?"/></label> --%>
+<%-- 												<form:checkbox path="shipToDeliveryAddress" id="shipToDeliveryAddress"/> --%>
+<!-- 											</h3> -->
 										</div>
 									<div id="ship-box-info" class="row">
 										<div class="col-md-6">
@@ -778,15 +779,15 @@ function initPayment(paymentSelection) {
 											</div>
 									</div>
 								
-								</div>
-									<div class="order-notes">
-										<div class="checkout-form-list">
-											<label><s:message code="label.order.notes" text="Order notes"/></label>
-											<s:message code="label.order.notes.eg" text="Notes for the order or delivery" var="msgNotes"/>
-											<form:textarea id="comments" cols="30" rows="10" path="comments" placeholder="${msgNotes}" />
-										</div>									
 									</div>
-								</div>
+										<div class="order-notes">
+											<div class="checkout-form-list">
+												<label><s:message code="label.order.notes" text="Order notes"/></label>
+												<s:message code="label.order.notes.eg" text="Notes for the order or delivery" var="msgNotes"/>
+												<form:textarea id="comments" cols="30" rows="10" path="comments" placeholder="${msgNotes}" />
+											</div>									
+										</div>
+									</div>
 								</c:if>													
 							</div>
 						</div>	
