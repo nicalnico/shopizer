@@ -243,8 +243,8 @@ response.setDateHeader ("Expires", -1);
 					<!-- process Content -->
 					<div class="process_content">
 						<h3>Support 24/7</h3>
-						<a href="https://ambroselli.art/shop/store/contactus.html"><p>Please contact us</p></a>
-					</div>
+						<a href="<c:url value="/shop/store/contactus.html"/>"><s:message code="label.customer.contactus" text="Contact us"/></a>						
+					</div>				
 				</div>
 			</div>
 			<!-- End Col -->
