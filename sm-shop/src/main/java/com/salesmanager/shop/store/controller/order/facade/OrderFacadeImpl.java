@@ -812,9 +812,11 @@ public class OrderFacadeImpl implements OrderFacade {
 			}
 			
 			//validate shipping
-			//NEW CODE should update shipping amount $100 
+			//NEW CODE should update shipping amount $150 
+			//free shipping
+			int shippingQuote_freeShippingAmount = 150;
 			if(	shippingService.requiresShipping(order.getShoppingCartItems(), store) && order.getSelectedShippingOption()==null
-				&& order.getOrderTotalSummary().getTotal().compareTo(new BigDecimal(100)) < 0) {
+				&& order.getOrderTotalSummary().getTotal().compareTo(new BigDecimal(shippingQuote_freeShippingAmount)) < 0) {
 				ServiceException serviceException = new ServiceException(ServiceException.EXCEPTION_VALIDATION,"shipping.required");
 				throw serviceException;
 			}

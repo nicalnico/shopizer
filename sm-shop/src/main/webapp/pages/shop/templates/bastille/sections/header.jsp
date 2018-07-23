@@ -110,7 +110,7 @@ response.setDateHeader ("Expires", -1);
 			<div class="header-top-message-area">
 				<div class="container">
 					<div class="row">
-						$9.90 FLAT RATE SHIPPING ALL IN AUSTRALIA * FREE SHIPPING FOR ORDERS OVER $100
+						$9.90 FLAT RATE SHIPPING ALL IN AUSTRALIA * FREE SHIPPING FOR ORDERS OVER $150
 					</div>
 				</div>
 			</div>

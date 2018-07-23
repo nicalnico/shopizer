@@ -212,7 +212,7 @@ response.setDateHeader ("Expires", -1);
 					</div>
 					<!-- process Content -->
 					<div class="process_content">
-						<h3>Free Shipping over $100</h3>
+						<h3>Free Shipping over $150</h3>
 						<p>In Australia</p>
 					</div>
 				</div>
