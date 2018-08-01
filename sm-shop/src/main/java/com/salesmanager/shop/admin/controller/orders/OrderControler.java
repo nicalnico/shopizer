@@ -402,11 +402,11 @@ private static final Logger LOGGER = LoggerFactory.getLogger(OrderControler.clas
 		
 			try {
 				
-				Customer customer = customerService.getById(newOrder.getCustomerId());
+				//Customer customer = customerService.getById(newOrder.getCustomerId());
 				Language lang = store.getDefaultLanguage();
-				if(customer!=null) {
+				/*if(customer!=null) {
 					lang = customer.getDefaultLanguage();
-				}
+				}*/
 				
 				Locale customerLocale = LocaleUtils.getLocale(lang);
 
